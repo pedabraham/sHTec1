@@ -19,10 +19,10 @@ enum velocidades:Int {
 
 class Auto {
     
-    var velocidad = velocidades()
+    var velocidad : velocidades
     
-    init(velocidad:velocidades ){
-        self.velocidad = .Apagado
+    init( ){
+        velocidad = velocidades(velocidadInicial: velocidades.Apagado)
     }
     
     func CambioDeVelocidad () -> (actual : Int, velocidadEnCadena: String){
@@ -45,7 +45,7 @@ class Auto {
         }
         
        
-        let resultado = (velocidad, velo)
+        let resultado = (velocidad.rawValue, velo)
         return resultado
         
     }
@@ -53,7 +53,7 @@ class Auto {
 }
 
 
-var auto = Auto.self
+var auto = Auto()
 
 
 for n in 1...20 {
